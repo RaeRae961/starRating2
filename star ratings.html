@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>mouse box</title>
+
+    <style>
+
+        #container {
+            /*display: flex; just stuck this here, not sure what to do exactly to make it flex*/
+            width: 500px;
+            height: 200px;
+            border: solid;
+            margin-left:    350px;
+            margin-top: 75px;
+        }
+
+        .box {
+            height: 50px;
+            width: 50px;
+            background: transparent url(empty-rating-star.jpg) no-repeat center top;
+            margin-left: 30px;
+            float: left;
+            margin-right: 10px;
+            margin-top: 50px;
+        }
+
+
+        textarea    {
+            width:  497px;
+            height: 300px;
+            margin-left:    350px;
+            font-size:  14px;
+            border-color:   lightblue;
+            border: solid;
+            background:  whitesmoke;
+
+        }
+
+        .hover  {
+            background: transparent url(red-star.jpg) no-repeat center top;
+
+        }
+        .click  {
+            background: transparent url(star.jpg) no-repeat center top;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="container">
+
+        <div class = "box"></div>
+        <div class = "box"></div>
+        <div class = "box"></div>
+        <div class = "box"></div>
+        <div class = "box"></div>
+        <br></br>
+
+    </div>
+
+    <div id="container2">
+        <textarea id="textbox">Tell us why you chose that star rating.</textarea>
+
+        <!--<textbox id="your-name" value="John"/>
+
+
+          <!--<p><span id="count"></span> characters remaining</p><-->
+
+<script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+
+<script>
+
+    var boxes = $('.box');
+
+
+    $('.box').on('mouseenter', function()   {
+
+        $(this).addClass('hover');
+        $(this).prevAll('.box').addClass('hover');
+    });
+    $('.box').on('mouseleave', function()   {
+
+        $(this).removeClass('hover');
+        $(this).prevAll('.box').removeClass('hover');
+    });
+
+    $('#container').on('click', function(e) {
+        $('.box').removeClass('click');
+
+
+
+        console.log("hi")
+    });
+
+    $('.box').on('click', function(e)   {
+        e.stopPropagation();
+        $(this).addClass('click');
+        $(this).prevAll('.box').addClass('click');
+        $(this).nextAll('.box').removeClass('click');
+
+    });
+
+    //$('#container2').on('click, function (e)    {
+     //       $('textarea').on('click').removeClass('click');
+
+  //  }
+//
+
+
+
+
+   // $('.box').click(function(event)  {
+     //   event.stopPropagation();
+    //});
+    //$('body').on('click', '.box', function(e) {
+     //   e.stopPropagation();
+     //   highlightCorrectBoxes(e);   //calling separate function for add/remove class
+      //  countHighlightedBoxes();  //calling function for the counter
+  //  });
+
+    //$( "p" ).click(function( event ) {
+    //event.stopPropagation();
+    // Do something
+
+    //$('#container').removeClass('click'); this works but doesn't remove all stars
+    //$(this).removeClass('click');//this doesn't remove the class either, but works otherwise
+    //$(this).prevAll('.box')removeClass('click'); doesn't work
+    //$('.box').removeClass('click');//using this makes the whole thing not work at all
+    //('.box').removeClass('click');//this works but doesn't clear all the stars
+
+    // $(this).prevAll('.box').removeClass('click');
+
+
+    // {
+       // background-color: white;
+       // width:  55px;
+       // height: 55px;
+     // }), 500);
+
+   // }
+
+
+       // $(function () {
+
+    //    $('box').hover;
+     //  $(this);
+     //       $().prev();
+
+  //  }
+
+
+</script>
+</body>
+</html>
